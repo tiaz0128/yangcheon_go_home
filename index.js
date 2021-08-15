@@ -1,6 +1,6 @@
-import { typpingText, fadeTitelBackground } from '/asset/js/main.js'
+import { playOpeingText, fadeOpeningBackground } from '/asset/js/main.js'
 
 (()=>{
-  typpingText()
-  fadeTitelBackground()
+  playOpeingText()
+  fadeOpeningBackground()
 })()
