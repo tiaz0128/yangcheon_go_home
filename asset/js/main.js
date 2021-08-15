@@ -57,4 +57,15 @@ function playArrow(){
   }, 1000);
 }
 
-export { playOpeingText, fadeOpeningBackground, playArrow }
+// HEADER MENU
+function clickHeader(){
+  const header = document.querySelector('.sticky-header');
+  const menus = document.querySelectorAll('.menu')
+
+  header.addEventListener('click', (e) => {
+    menus.forEach(menu => menu.classList.remove('click'))
+    e.target.parentNode.classList.toggle('click')
+  })
+}
+
+export { playOpeingText, fadeOpeningBackground, playArrow, clickHeader }

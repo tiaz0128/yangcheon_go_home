@@ -1,6 +1,7 @@
-import { playOpeingText, fadeOpeningBackground } from '/asset/js/main.js'
+import { playOpeingText, fadeOpeningBackground,clickHeader } from '/asset/js/main.js'
 
 (()=>{
   playOpeingText()
   fadeOpeningBackground()
+  clickHeader()
 })()

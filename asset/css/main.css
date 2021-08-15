@@ -20,9 +20,12 @@
 :root{
   --background-color : #F8F8F8;
   --title-color: #F8F8F8;
+  --menu-color: #F39C12;
+  --click-menu-color: #F36C12;
 
-  --title-size: 46px;
-  --description-size: 24px;
+  --title-size: 1.44rem;
+  --description-size: 0.75rem;
+  --menu-size: 0.5rem;
 }
 
 html{
@@ -52,6 +55,10 @@ a {
   position: relative;
   box-sizing: border-box;
   padding: 0 50px;
+}
+
+.section:nth-child(n+2){
+  padding-top: 80px;
 }
 
 .clear-fix::after{
@@ -162,13 +169,48 @@ a {
 }
 
 
-/* HEADER */
+/* HEADER SECTION */
 
 .sticky-header{
   position: sticky;
   top: 0;
-  bottom: 0;
+  z-index: 999;
 }
+
+.header-menus{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+
+  flex: 1;
+  text-align: center;
+  background-color: var(--menu-color);
+  border-right: 1px solid #e2e2e2;
+}
+
+.menu.click {
+  background: var(--click-menu-color);
+}
+
+.menu:last-child {
+  border-right: none;
+}
+
+.menu a {
+  width: 100%;
+  padding: 20px;
+
+  color: var(--title-color);
+  text-decoration: none;
+  font-size: var(--menu-size);
+  font-weight: 800;
+}
+
 
 
 
@@ -211,29 +253,24 @@ a {
 
 @keyframes upDown {
   0% {
-    bottom: 15%;
+    bottom: 3rem;
   }
   100% {
-    bottom: 10%;
+    bottom: 1.5rem;
   }
 }
 
 @media (max-width: 525px) {
 
-  :root{
-    --description-size: 20px;
-  } 
-  
   .description{
     word-break: keep-all;
   }
-  
-  @keyframes toBig {
-    from {
-      font-size: 2.5rem;
-    }
-    to {
-      font-size: var(--title-size);
-    }
+
+  html{
+    font-size: 26px;
+  }
+
+  .menu a{
+    padding: 0.5rem;
   }
 }
