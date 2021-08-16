@@ -19,9 +19,12 @@
 
 :root{
   --background-color : #F8F8F8;
-  --title-color: #F8F8F8;
+  --footer-background-color : #000;
+
+  --default-color: #F8F8F8;
   --menu-color: #F39C12;
   --click-menu-color: #F36C12;
+  --footer-font-color: #999;
 
   --title-size: 1.44rem;
   --description-size: 0.75rem;
@@ -54,11 +57,11 @@ a {
 .section{
   position: relative;
   box-sizing: border-box;
-  padding: 0 50px;
+  padding: 0 1.35rem;
 }
 
 .section:nth-child(n+2){
-  padding-top: 80px;
+  padding-top: 3.4rem;
 }
 
 .clear-fix::after{
@@ -83,11 +86,6 @@ a {
   line-height: 1.4;
 }
 
-.blod-description{
-  font-size: var(--description-size);
-  font-weight: 800;
-  font-style: italic;
-}
 
 /* ANIMATION */
 
@@ -122,7 +120,7 @@ a {
 }
 
 .title-container {
-  color: var(--title-color);
+  color: var(--default-color);
   text-align: center;
   word-break: keep-all;
 
@@ -133,6 +131,12 @@ a {
 .description-box{
   margin-bottom: 20px;
   word-break: break-all;
+}
+
+.blod-description{
+  font-size: var(--description-size);
+  font-weight: 800;
+  font-style: italic;
 }
 
 .fade-img{
@@ -152,7 +156,6 @@ a {
 .fade-img.active{
   opacity: 1;
 }
-
 
 .title-arrow {
   display: none;
@@ -203,18 +206,52 @@ a {
 
 .menu a {
   width: 100%;
-  padding: 20px;
+  padding: calc(16/32*1rem);
 
-  color: var(--title-color);
+  color: var(--default-color);
   text-decoration: none;
   font-size: var(--menu-size);
   font-weight: 800;
 }
 
 
+/* FOOTER */
+
+.footer-container {
+  width: 100%;
+  background: var(--footer-background-color);
+  padding-top: 0.8rem;
+  padding-bottom: 1rem;
+}
+
+.footer-title {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--footer-font-color);
+  text-align: center;
+  margin: 8px 0 12px;
+}
+
+.footer-description {
+  font-size: 0.35rem;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  color: var(--footer-font-color);
+  text-align: center;
+  word-break: keep-all;
+}
+
+.footer-description:last-child {
+  margin-top: 10px;
+}
+
+.footer-description b {
+  font-weight: 800;
+}
 
 
 /* @keyframes rule */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -271,6 +308,6 @@ a {
   }
 
   .menu a{
-    padding: 0.5rem;
+    padding: 0.5rem 0.2rem;
   }
 }
