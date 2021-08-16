@@ -215,6 +215,67 @@ a {
 }
 
 
+/* ASIDE CONTACT */
+
+aside {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.contact-container {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  display: none;
+}
+
+.contact {
+  display: block;
+  width: 0.35rem;
+  height: 0.35rem;
+  padding: 1.05rem;
+  box-sizing: border-box;
+
+  border-radius: 50%;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+
+  text-indent: -9999px;
+  margin-bottom: 0.45rem;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-tel {
+  background-image: url("/asset/img/tel_bg.png");
+}
+
+.contact-kakao {
+  background-image: url("/asset/img/kakao_bg.png");
+}
+
+.show {
+  animation: fadeIn 0.8s 1;
+}
+
+.contact-container.show{
+  opacity: 1;
+  display: block;
+}
+
+.hidden {
+  animation: fadeOut 0.5s 1;
+}
+
+.contact-container.hidden{
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+}
+
+
 /* FOOTER */
 
 .footer-container {
@@ -225,6 +286,7 @@ a {
 }
 
 .footer-title {
+  font-family: 'EliceDigitalBaeum_Bold';
   font-size: 0.6rem;
   font-weight: 800;
   color: var(--footer-font-color);

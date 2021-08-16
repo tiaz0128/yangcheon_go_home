@@ -68,4 +68,24 @@ function clickHeader(){
   })
 }
 
-export { playOpeingText, fadeOpeningBackground, playArrow, clickHeader }
+// scroll contact
+function scrollToggleContact(){
+  document.addEventListener("scroll", () => {
+    const contact = document.querySelector(".contact-container");
+    window.scrollY > 200 ? showContact(contact) : hideContact(contact)
+  });  
+}
+
+function showContact(contact){
+  contact.classList.remove('hidden')
+  contact.classList.add('show')
+}
+
+function hideContact(contact){
+  if(contact.classList.contains('show')){
+    contact.classList.remove('show')
+    contact.classList.add('hidden')
+  }
+}
+
+export { playOpeingText, fadeOpeningBackground, playArrow, clickHeader, scrollToggleContact }
