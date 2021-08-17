@@ -19,11 +19,14 @@
 
 :root{
   --background-color : #F8F8F8;
+  --body-background-color: #484040;
   --footer-background-color : #000;
+  --shadow-background-color: #cccccc;
 
   --default-color: #F8F8F8;
   --menu-color: #F39C12;
   --click-menu-color: #F36C12;
+  --link-color: #6F9EF9;
   --footer-font-color: #999;
 
   --title-size: 1.44rem;
@@ -37,7 +40,7 @@ html{
 }
 
 body{
-  background-color: var(--background-color);
+  background-color: var(--body-background-color);
   font-family: "Pretendard-Regular, Arial, Helvetica, sans-serif"
 }
 
@@ -51,7 +54,7 @@ a {
 .page {
   max-width: 1024px;
   margin: 0 auto;
-  background-color: lightpink;
+  background-color: var(--background-color);
 }
 
 .section{
@@ -214,6 +217,70 @@ a {
   font-weight: 800;
 }
 
+
+/* ROAD SECTION */
+
+.road-container {
+  padding: 0 0 1.44rem;
+}
+
+.road-group {
+  margin: 1rem auto 2rem;
+  
+  box-shadow: 0px 0px 50px var(--shadow-background-color);
+  border-radius: 25px 25px 0 0;
+  overflow: hidden;
+}
+
+.road-viewgroup {
+  margin-bottom: 1.65rem;
+  position: relative;
+}
+
+.kakao-map {
+  position: absolute;
+  bottom: -18px;
+  left: 25px;
+  
+  background: var(--link-color);
+  color: var(--default-color);
+
+  padding: 12px 25px;
+  border-radius: 25px;
+
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.road-bg {
+  background: url("/asset/img/road_bg.png");
+  background-position: center;
+  background-size: cover;
+
+  min-height: 300px;
+}
+
+.road-info {
+  margin: 0 0.7rem;
+  padding-bottom: 1rem;
+}
+
+.road-title {
+  font-family: "EliceDigitalBaeum_Bold";
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.road-description{
+  line-height: 1.5;
+  font-size: 0.65rem;
+  word-break: keep-all;
+}
+
+.road-description b { 
+  font-weight: 700;
+}
 
 /* ASIDE CONTACT */
 
