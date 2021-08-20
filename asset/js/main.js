@@ -88,4 +88,53 @@ function hideContact(contact){
   }
 }
 
-export { playOpeingText, fadeOpeningBackground, playArrow, clickHeader, scrollToggleContact }
+function clickInfoGrid(){
+  const infoGird = document.querySelector('.info-grid')
+
+  infoGird.addEventListener('click', ({target})=> {
+    if(target.classList.contains("info-grid")) return;
+    
+    const {dataset : { col }} = target.nodeName === 'H2' ? target.parentNode : target
+    showPopup(col)
+  })
+}
+
+function showPopup(targetId){
+  const popUpSection = document.querySelector('.section-popup')
+  popUpSection.style.display = 'block';
+
+  const popupContent = document.querySelectorAll('.popup-content')[targetId - 1]
+  popupContent.classList.remove('none')
+}
+
+function closePopup(){
+  const popUpSection = document.querySelector('.section-popup')
+  const popUpClose = document.querySelector('.popup-close')
+  const answers = document.querySelectorAll('.answer')
+
+  popUpClose.addEventListener('click', (e) => {    
+    answers.forEach(answer => answer.className = 'answer none')
+
+    const popupContent = document.querySelector('[class="popup-content"]')
+    popupContent.classList.add('none')
+
+    popUpSection.style.display = 'none';
+    
+  })
+}
+
+function rollupQuestion(){
+  const questionBoxes = document.querySelectorAll('.question-box')
+  const answers = document.querySelectorAll('.answer')
+  
+  questionBoxes.forEach((questionBox) => {
+    questionBox.addEventListener('click', (e) => {
+      answers.forEach(answer => answer.classList.add('rollup'))
+      answers[e.currentTarget.dataset.idx].classList.remove('none')
+      answers[e.currentTarget.dataset.idx].classList.remove('rollup')
+      answers[e.currentTarget.dataset.idx].classList.add('rolldown')
+    })
+  })
+}
+
+export { playOpeingText, fadeOpeningBackground, playArrow, clickHeader, scrollToggleContact, clickInfoGrid, closePopup, rollupQuestion }

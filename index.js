@@ -1,8 +1,11 @@
-import { playOpeingText, fadeOpeningBackground, clickHeader, scrollToggleContact } from '/asset/js/main.js'
+import { playOpeingText, fadeOpeningBackground, clickHeader, scrollToggleContact, clickInfoGrid, closePopup, rollupQuestion } from '/asset/js/main.js'
 
 (()=>{
   scrollToggleContact()
   playOpeingText()
   fadeOpeningBackground()
   clickHeader()
+  clickInfoGrid()
+  closePopup()
+  rollupQuestion()
 })()

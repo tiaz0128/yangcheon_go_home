@@ -218,6 +218,159 @@ a {
 }
 
 
+/* INFO SECTION */
+
+.section.section-info{
+  margin-top: 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+
+  height: calc(var(--vh, 1vh) * 75);
+
+  cursor: pointer;
+}
+
+.col-container {
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0.45rem;
+}
+
+.col {
+  height: 100%;
+  box-shadow: 0px 0px 50px #cccccc;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  transition: all 0.2s ease-out;
+}
+
+.col:hover {
+  transform: scale(1.2);
+}
+
+.col .description{
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 800; 
+  width: 100%;
+  background: linear-gradient(0deg, #000, transparent);
+}
+
+.col-1 {
+  background-image: url("/asset/img/info_bg1.png");
+}
+.col-2 {
+  background-image: url("/asset/img/info_bg2.png");
+}
+.col-3 {
+  background-image: url("/asset/img/info_bg3.png");
+}
+.col-4 {
+  background-image: url("/asset/img/info_bg4.jpg");
+}
+
+/* POPUP SECTION */
+
+.section-popup {
+  display: none;
+
+  width: 100%;
+  height: 100vh;
+
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+
+  background: transparent;
+  animation: fadeIn 0.5s 1;
+}
+
+.section.section-popup{
+  padding-top: 1rem;
+}
+
+.section-popup::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.popup-container {
+  flex: 1;
+  position: relative;  
+  overflow-y: scroll;
+  z-index: 2;
+  padding: 1.2rem;
+  height: calc(var(--vh, 1vh) * 75);;
+
+  background: var(--background-color);
+}
+
+.popup-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--link-color);
+  color: var(--default-color);
+  font-size: 1.2rem;
+  font-weight: 800;
+  z-index: 5;
+
+  cursor: pointer;
+}
+
+.none{
+  display: none;
+}
+
+
+/* POPUP CONTENT */
+.question {
+
+}
+
+.answer {
+  display: block;
+  overflow: hidden;
+  animation: rolldown 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19) 1;
+}
+
+.answer.none{
+  display: none;
+}
+
+.rollup{
+  display: block;
+  overflow: hidden;
+  height: 0;
+  animation: rollup 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19) 1;
+}
+
 /* ROAD SECTION */
 
 .road-container {
@@ -425,6 +578,25 @@ aside {
     bottom: 1.5rem;
   }
 }
+
+@keyframes rollup {
+  0% {
+    height: 200px;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes rolldown {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
 
 @media (max-width: 525px) {
 
